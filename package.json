@@ -19,20 +19,22 @@
   },
   "homepage": "https://github.com/joywang912/MR-Tech-Test#readme",
   "devDependencies": {
-    "@babel/cli": "^7.1.0",
-    "@babel/core": "^7.1.0",
-    "@babel/preset-env": "^7.1.0",
-    "@babel/preset-react": "^7.0.0",
-    "babel-loader": "^8.0.6",
-    "css-loader": "^1.0.0",
-    "style-loader": "^0.23.0",
-    "webpack": "^4.19.1",
-    "webpack-cli": "^3.1.1",
-    "webpack-dev-server": "^3.1.8"
+    "@babel/cli": "^7.12.1",
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
+    "@babel/preset-react": "^7.12.5",
+    "babel-loader": "^8.2.1",
+    "css-loader": "^1.0.1",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
-    "react": "^16.5.2",
-    "react-dom": "^16.5.2",
-    "react-hot-loader": "^4.3.11"
+    "@ant-design/icons": "^4.2.2",
+    "antd": "^4.8.2",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "react-hot-loader": "^4.13.0"
   }
 }

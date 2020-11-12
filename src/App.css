@@ -1,6 +1,8 @@
 :root {
   --font-color: #222222;
   --font-color-lignt: #888888;
+  --border-color: #222222;
+  --border-color-light: #cccccc;
 }
 
 *,
@@ -35,12 +37,16 @@ h1 {
 .main-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 1rem 3rem;
+  padding: 0 3rem;
   display: flex;
   justify-content: space-between;
   color: var(--font-color);
   font-size: 1.4rem;
   line-height: 1.5;
+}
+
+.sm-display {
+  display: none;
 }
 
 @media (max-width: 1200px) {
@@ -58,7 +64,16 @@ h1 {
 @media (max-width: 767px) {
   .main-container {
     max-width: 100%;
+  }
+  content.main-container {
     flex-direction: column;
+  }
+  .sm-display {
+    display: inline-block;
+  }
+
+  .sm-hidden {
+    display: none;
   }
 }
 
@@ -72,6 +87,55 @@ h1 {
   clear: both;
   display: table;
 }
+
+.button {
+  padding: 4px 15px;
+  color: var(--font-color);
+  border: 2px solid var(--border-color);
+  box-shadow: none;
+  cursor: pointer;
+  background-color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: all 0.2s;
+}
+
+.button:hover {
+  background-color: var(--font-color);
+  color: #fff;
+}
+
+/** Antd Overrides**/
+/* Radio Button*/
+.ant-radio-button-wrapper,
+.ant-radio-button-wrapper:hover {
+  margin-right: 5px;
+  color: var(--font-color);
+}
+.ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled),
+.ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled):hover,
+.ant-radio-button-wrapper-checked:not([class*=" ant-radio-button-wrapper-disabled"]).ant-radio-button-wrapper:first-child,
+.ant-radio-button-wrapper:focus-within,
+.ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled):focus-within {
+  border: 2px solid var(--border-color);
+  color: var(--font-color);
+  box-shadow: none;
+}
+
+.ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled)::before,
+.ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled):hover::before {
+  background-color: transparent;
+}
+
+/** Popover **/
+.ant-popover {
+  padding: 0;
+  top: 33px !important;
+  border: 1px solid var(--border-color-light);
+}
+.ant-popover-arrow {
+  display: none;
+}
 /** Header **/
 header {
   width: 100%;
@@ -81,10 +145,29 @@ header {
 }
 
 .cart {
-  float: right;
+  position: relative;
+  padding: 6px 15px;
   color: var(--font-color-lignt);
+  cursor: pointer;
+  border: 1px solid transparent;
 }
 
+.cart.ant-popover-open {
+  background-color: #fff;
+  color: var(--font-color);
+  border-color: var(--border-color-light);
+}
+
+.cart-item {
+  margin: 1.5rem;
+  width: 30rem;
+  display: flex;
+}
+
+.cart-item__image {
+  width: 10rem;
+  margin-right: 1rem;
+}
 /** Product Image **/
 .product-image {
   padding: 0 3rem;
@@ -106,4 +189,28 @@ header {
 
 .product-decription {
   color: var(--font-color-lignt);
+}
+
+/** Product Selection **/
+.product-selection {
+  color: var(--font-color-lignt);
+  margin-top: 3rem;
+  text-transform: uppercase;
+}
+
+.required-star {
+  color: #c90000;
+}
+
+.error {
+  margin-top: 2rem;
+  color: #c90000;
+}
+.size-value {
+  color: var(--font-color);
+  padding-left: 0.5rem;
+}
+
+.prodcut-add-button {
+  margin-top: 2rem;
 }
